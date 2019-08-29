@@ -47,6 +47,7 @@ h1{
     overflow: hidden;
     background-color: rgb(247, 88, 15);
     height: 46px;
+  
   }
   
 .tab ul li {
@@ -61,10 +62,17 @@ h1{
   
  li a {
     display: block;
-    color: black;
+    color:  white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: 400px
+  }
+  li a:hover {
+    display: block;
+    color:  black;
+    font-size: 20px;
+  
   }
   footer{
     background-color: gray;
@@ -81,7 +89,7 @@ height:400px;
     height:292px;
     margin-top: 14px;
     padding:0px,150px,0px,150px;
-    /* position:relative; */
+   
    
 }
 .SliderMenu{
@@ -124,8 +132,6 @@ footer{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-
 #arroPrev{
  
   top: 50%;
@@ -163,6 +169,7 @@ footer{
     width: 67px;
    
 }
+
 #thumbPrev{
   margin-left: -6px;
   
@@ -174,9 +181,10 @@ footer{
 }
 
 .activeTab{
-  background-color: rgb(238, 15, 34);
+  background-color: 	#DCDCDC;
+  font-weight:300px;
   font-size: 20px;
-  color: white;
+  color: black;
 }
 
 .thumbnailActive{

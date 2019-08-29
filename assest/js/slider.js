@@ -28,8 +28,7 @@ function imgArr(arr) {
     var div = document.getElementsByTagName('div');
     for (i = 0; i < arr.length; i++) {
         img = document.createElement('img'); //creat img_array
-        img.className = 'sliderImgArray';
-        
+        img.className = 'sliderImgArray'; 
         img.setAttribute("src", arr[i].url);
         div[8].append(img);
     }
@@ -151,7 +150,7 @@ function thumbnailScrollPrev(){
     for (var i = 0; i < thubnailArr.length; i++) { 
         if($(thubnailArr[i]).attr('src')==slidertAtr){
             
-             
+             size=i*202;
              $('#sliderUl').animate({'margin-left': '+=202px'}, 100);
         }
 
@@ -264,3 +263,13 @@ $("#cycleHref").click(function(){
 
 });
 
+//acrtive header tab
+
+var liTab = document.getElementsByClassName("liTab");
+for (var i = 0; i < liTab.length; i++) {
+  liTab[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("activeTab");
+  current[0].className = current[0].className.replace(" activeTab", "");
+  this.className += " activeTab";
+  });
+}
