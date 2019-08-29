@@ -173,6 +173,12 @@ footer{
   opacity: 1;
 }
 
+.activeTab{
+  background-color: rgb(238, 15, 34);
+  font-size: 20px;
+  color: white;
+}
+
 .thumbnailActive{
 
   opacity: 1;
