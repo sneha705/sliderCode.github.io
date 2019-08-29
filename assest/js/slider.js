@@ -21,7 +21,7 @@ var obj = [
 
      var img=imgObj.filter(({type})=>type===value);
      return img;
-    }
+}
     
 //slider image create
 function imgArr(arr) {
@@ -33,7 +33,6 @@ function imgArr(arr) {
         div[8].append(img);
     }
 }
-
 //slider of sliderImage
 function sliderImag1(ImgIndex) {
     var i;
@@ -51,9 +50,6 @@ function sliderImag1(ImgIndex) {
     x[slideIndex - 1].classList.add("active");
     thumbnail[slideIndex - 1].classList.add("thumbnailActive");
 }
-
-
-
 //create  thumbnail image
 function menuBar(ar) {
     var ul = document.getElementsByTagName('ul');
@@ -72,11 +68,6 @@ function menuBar(ar) {
 
     }
 }
-
-
-// thumbnail image call
-//menuBar(obj)
-
 //function current Div
    function currentDiv(){
     var thumbNail=document.getElementsByClassName("x");
@@ -84,44 +75,33 @@ function menuBar(ar) {
      var i=   $( thumbNail ).index( this );
      sliderImag1(slideIndex = i+1);
     });
-}
-    
-
+}   
 //thumnail image  call on Prev button
 function thumbnailPrevBtn(){
     if ( $('#sliderUl').css('marginLeft') <'0px' ){
         $('#sliderUl').animate({'margin-left': '+=202px'}, 100);
     }
 
-}
-
-    
+}   
 //thumnail image  call on Next button
 function thumbnailNextBtn(){
     thumbnail=document.getElementsByClassName("x");
     size=(thumbnail.length*202)-(5*202);
     a=( $('#sliderUl').css('marginLeft'));
-    
-    if (parseInt(a) < (-size) ){
-    }
-    else{
-       $('#sliderUl').animate({'margin-left': '-=202px'}, 100);
-    }
-   }
-
-   //show slider on thumbnail slider
+        if (parseInt(a) >= (-size) ){
+            $('#sliderUl').animate({'margin-left': '-=202px'}, 100);
+        }
+  }
+//show slider on thumbnail slider
 function sliderMove(ImgIndex) {
     sliderImag1(slideIndex += ImgIndex);
 }
-
 //thumbnail scroll on next button
 function thumbnailScrollNext(){
     sliderImgArr=document.getElementsByClassName(" sliderImgArray");
 
     if(sliderImgArr.className="active,sliderImgArray"){
-
         currentImg=document.getElementsByClassName("active sliderImgArray");
-       
         var slidertAtr=($(currentImg[0]).attr('src'));
     }
     thubnailArr=document.getElementsByClassName("x");
@@ -131,13 +111,9 @@ function thumbnailScrollNext(){
         if($(thubnailArr[i]).attr('src')==slidertAtr){
              $('#sliderUl').animate({'margin-left': '-=202px'}, 100);
             // thubnailArr[i].style.border="thick solid orange";
-        }
-          
-    } 
-         
-    
+        }   
+    }        
 }
-
 //thumbnail scroll on Prev btn
 function thumbnailScrollPrev(){
     sliderImgArr=document.getElementsByClassName(" sliderImgArray");
@@ -153,13 +129,8 @@ function thumbnailScrollPrev(){
              size=i*202;
              $('#sliderUl').animate({'margin-left': '+=202px'}, 100);
         }
-
-    } 
-         
-    
+    }  
 }
-
-
 //calling btn function for prev button
 $("#arroPrev").click(function () {
     sliderMove(-1);
@@ -169,42 +140,29 @@ $("#arroPrev").click(function () {
     
 });
 
-
-
-
-
-
-
-
-
-
 //calling btn function for next button
 $("#arrowNext").click(function () {
     sliderMove(1);
-  //  thumbnailScrollNext();
-   
+//thumbnailScrollNext();
             thumbnail=document.getElementsByClassName("x");
             size=(thumbnail.length*202)-(5*202);
             a=( $('#sliderUl').css('marginLeft'));
-            
-            if (parseInt(a) < (-size) ){
-            }
-        else{
-            thumbnailScrollNext();
+        if (parseInt(a) >= (-size) ){
+            $('#sliderUl').animate({'margin-left': '-=202px'}, 100);
         }
 });
-
-
+// next btn func call
 $("#thumnNext").click(function () {
     sliderMove(1);
     thumbnailNextBtn();
 
 });
-
+// prev btn func call
 $("#thumbPrev").click(function () {
     thumbnailPrevBtn();
     sliderMove(-1);
 });
+//empty func declare
 function empty(){
     $(".sliderImage").empty();
     $("#sliderUl").empty();
@@ -229,7 +187,6 @@ window.onload = function() {
     wraperAll();
   };
   
-
 // car click func call
 $("#carHref").click(function(){
    
@@ -239,7 +196,6 @@ $("#carHref").click(function(){
     menuBar(carArray);
     sliderImag1(slideIndex=1);
     currentDiv();
-
 });
 // All bike func call
  $("#bikeHref").click(function(){
@@ -249,8 +205,6 @@ $("#carHref").click(function(){
     menuBar(bikeArray);
     sliderImag1(slideIndex=1);
     currentDiv();
-
-
 });
 // cycle click func call
 $("#cycleHref").click(function(){
@@ -260,11 +214,8 @@ $("#cycleHref").click(function(){
     menuBar(cycleArray);
     sliderImag1(slideIndex=1);
     currentDiv();
-
 });
-
 //acrtive header tab
-
 var liTab = document.getElementsByClassName("liTab");
 for (var i = 0; i < liTab.length; i++) {
   liTab[i].addEventListener("click", function() {
